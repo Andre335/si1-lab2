@@ -11,4 +11,5 @@ public class Application extends Controller {
         return ok(index.render());
     }
 
+    public static Result anuncie() { return ok(anuncie.render()); }
 }

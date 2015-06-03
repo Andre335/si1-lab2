@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
             <!-- Favicon -->
         <link rel="shortcut icon" href=@routes.Assets.at("images/favicon.png") type="image/png">
 
@@ -17,6 +19,11 @@
 		    <!-- Bootstrap Core JavaScript -->
 		<script type="text/javascript" src=@routes.Assets.at("javascripts/bootstrap.min.js")></script>
 
+            <!-- Fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+        <title>Band Finder</title>
     </head>
 
     <body>
@@ -36,7 +43,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#subscribe">Anuncios</a></li>
-                        <li><a href="#subscribe">Anuncie</a></li>
+                        <li><a href="@routes.Application.anuncie()">Anuncie</a></li>
                         <li><a href="#about">About</a></li>
                     </ul>
                 </div>
@@ -51,39 +58,56 @@
                 <p>Uma aplicação web que torna mais fácil a busca por outros colegas músicos.</p>
                 <p>Crie seus anúncios e logo, logo alguém entrará em contato com você.</p>
                 <p>
-                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Criar Anúncio</a>
+                    <a class="btn btn-lg btn-primary" href="@routes.Application.anuncie()" role="button">Criar Anúncio</a>
                 </p>
             </div>
 
         </div>
         <section id="about">
-            <div class="container marketing" style="text-align: center">
+            <div class="container">
+                <div class="row marketing" style="text-align: center">
 
-                    <!-- Three columns of text below the carousel -->
-                <div class="row">
-                    <div class="col-lg-4">
-                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                        <!-- Three rows of text below the menu -->
+                    <div class="col-lg-6" style="padding-top: 30px">
+                        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true" style="font-size: 50px"></span>
                         <h2>Crie Anúncios</h2>
                         <p>Crie um anúncio completo, e espere seus colegas músicos responderem, para montar sua banda.</p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                    </div><!-- /.row -->
+                    <div class="col-lg-6" style="padding-top: 30px">
+                        <span class="glyphicon glyphicon-filter" aria-hidden="true" style="font-size: 50px"></span>
                         <h2>Busca por Anúncios Filtrada</h2>
                         <p>Filtre anúncios pelos estilos musicais ou instrumentos que você gosta ou toca para ir direto aos que lhe interessam.</p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                    </div>
+                    <div class="col-lg-6" style="padding-top: 30px; padding-bottom: 30px">
+                        <span class="glyphicon glyphicon-cd" aria-hidden="true" style="font-size: 50px"></span>
                         <h2>Monte sua banda!</h2>
                         <p>Monte sua banda rapidamente e divirta-se.</p>
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
-
-                    <!-- FOOTER -->
-                <footer>
-                    <p class="pull-right"><a href="#">Back to top</a></p>
-                    <p>© 2015 André Araújo</p>
-                </footer>
+                    </div>
+                    <div class="col-lg-6" style="padding-top: 30px; padding-bottom: 30px">
+                        <span class="glyphicon glyphicon-phone" aria-hidden="true" style="font-size: 50px"></span>
+                        <h2>Deixe seu contato!</h2>
+                        <p>Ao criar o anúncio deixe uma forma de contato, para que os interessados possam logo contactar você.</p>
+                    </div>
+                    <div class="col-lg-6" style="padding-bottom: 30px">
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true" style="font-size: 50px"></span>
+                        <h2>Melhor jeito de conhecer novos músicos!</h2>
+                        <p>Utilizando essa aplicação você terá a oportunidade de conhecer gente nova com maior facilidade.</p>
+                    </div>
+                    <div class="col-lg-6" style="padding-bottom: 30px">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 50px"></span>
+                        <h2>Fácil de unsar!</h2>
+                        <p>Apenas criar o anuncio e esperar.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <div class="container marketing">
+                <!-- FOOTER -->
+            <footer>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>© 2015 André Araújo, UFCG</p>
+            </footer>
+        </div>
     </body>
 </html>
