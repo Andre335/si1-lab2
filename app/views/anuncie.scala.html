@@ -22,7 +22,7 @@
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
-  <title>Anúncie</title>
+  <title>Anuncie</title>
 </head>
 <body>
   <div class="navbar navbar-default navbar-fixed-top scroll-me">
@@ -42,12 +42,482 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#subscribe">Anuncios</a></li>
           <li><a href="@routes.Application.anuncie()">Anuncie</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="@routes.Application.index()#about">About</a></li>
         </ul>
       </div>
 
     </div>
   </div>
-  
+
+  <div class="container" style="padding-top: 60px">
+    <form class="form-horizontal" role="form" method="post" action=@routes.Application.anunciar()>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <h2> Informações do anúncio </h2>
+          <label for="InputName">Título</label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="InputName" id="InputTitulo" placeholder="Título" required="">
+            <span class="input-group-addon"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputMessage">Descrição</label>
+          <div class="input-group">
+            <textarea name="InputMessage" id="InputDescricao" class="form-control" rows="5" required=""></textarea>
+            <span class="input-group-addon"></span>
+          </div>
+        </div>
+        <h2> Suas Informações </h2>
+        <div class="form-group">
+          <label for="InputEmail">Cidade</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="InputCidade" name="InputName" placeholder="Cidade" required="">
+            <span class="input-group-addon"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Bairro</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="InputBairro" name="InputName" placeholder="Bairro" required="">
+            <span class="input-group-addon"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Email</label>
+          <div class="input-group">
+            <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" required="">
+            <span class="input-group-addon"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Link para o Facebook</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="InputFacebook" name="InputName" placeholder="Facebook" required="">
+            <span class="input-group-addon"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Instrumentos</label>
+          <div class="input-group">
+            <div class="col-sm-10">
+              <select class="form-control multiselect" id="myInst" name="myInst[]" multiple="multiple" required="" style="display: none;">
+
+                <option value="1">Sanfona</option>
+
+                <option value="2">Baixo Acústico</option>
+
+                <option value="3">Piano de Meia-Cauda</option>
+
+                <option value="4">Gaita de Fole</option>
+
+                <option value="5">Banjo</option>
+
+                <option value="6">Bumbo</option>
+
+                <option value="7">Baixo Elétrico</option>
+
+                <option value="8">Bonjô</option>
+
+                <option value="9">Carrilhão</option>
+
+                <option value="10">Castanholas</option>
+
+                <option value="11">Cavaquinho</option>
+
+                <option value="12">Violoncelo</option>
+
+                <option value="13">Clarinete</option>
+
+                <option value="14">Conga</option>
+
+                <option value="15">Clavicórdio</option>
+
+                <option value="16">Contrafagote</option>
+
+                <option value="17">Prato</option>
+
+                <option value="18">Contra Baixo</option>
+
+                <option value="19">Bateria</option>
+
+                <option value="20">Pífano</option>
+
+                <option value="21">Flauta</option>
+
+                <option value="22">Piano de Cauda</option>
+
+                <option value="23">Reco-reco</option>
+
+                <option value="24">Violão</option>
+
+                <option value="25">Guitarra</option>
+
+                <option value="26">Gaita</option>
+
+                <option value="27">Harpa</option>
+
+                <option value="28">Chimbau</option>
+
+                <option value="29">Trompa</option>
+
+                <option value="30">Tímpano</option>
+
+                <option value="31">Teclado</option>
+
+                <option value="32">Guitarra Havaiana</option>
+
+                <option value="33">Mandolin</option>
+
+                <option value="34">Orgão</option>
+
+                <option value="35">Piano</option>
+
+                <option value="36">Guitarra Portuguesa</option>
+
+                <option value="37">Flauta Doce</option>
+
+                <option value="38">Saxofone</option>
+
+                <option value="39">Violão de 7 cordas</option>
+
+                <option value="40">Chocalho</option>
+
+                <option value="41">Cítara</option>
+
+                <option value="42">Sousafone</option>
+
+                <option value="43">Tabla</option>
+
+                <option value="44">Tambor Falante</option>
+
+                <option value="45">Pandeiro</option>
+
+                <option value="46">Violão Tenor</option>
+
+                <option value="47">Tambor</option>
+
+                <option value="48">Triângulo</option>
+
+                <option value="49">Trombone</option>
+
+                <option value="50">Trompete</option>
+
+                <option value="51">Tuba</option>
+
+                <option value="52">Vibrafone</option>
+
+                <option value="53">Viola</option>
+
+                <option value="54">Violino</option>
+
+                <option value="55">Vocal</option>
+
+                <option value="56">Xilofone</option>
+
+                <option value="57">Zabumba</option>
+
+              </select><div class="btn-group" style="width: 300px;"><button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Selecione uma opição" style="width: 300px; overflow: hidden; text-overflow: ellipsis;" aria-expanded="false"><span class="multiselect-selected-text">Selecione uma opição</span> <b class="caret"></b></button><ul class="multiselect-container dropdown-menu" style="max-height: 200px; overflow-y: auto; overflow-x: hidden;"><li class="multiselect-item filter" value="0"><div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Pesquise um instrumento"><span class="input-group-btn"><button class="btn btn-default multiselect-clear-filter" type="button"><i class="glyphicon glyphicon-remove-circle"></i></button></span></div></li><li class="multiselect-item multiselect-all"><a tabindex="0" class="multiselect-all"><label class="checkbox"><input type="checkbox" value="multiselect-all"> Selecionar Todos!</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="1"> Sanfona</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="2"> Baixo Acústico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="3"> Piano de Meia-Cauda</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="4"> Gaita de Fole</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="5"> Banjo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="6"> Bumbo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="7"> Baixo Elétrico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="8"> Bonjô</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="9"> Carrilhão</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="10"> Castanholas</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="11"> Cavaquinho</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="12"> Violoncelo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="13"> Clarinete</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="14"> Conga</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="15"> Clavicórdio</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="16"> Contrafagote</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="17"> Prato</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="18"> Contra Baixo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="19"> Bateria</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="20"> Pífano</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="21"> Flauta</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="22"> Piano de Cauda</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="23"> Reco-reco</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="24"> Violão</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="25"> Guitarra</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="26"> Gaita</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="27"> Harpa</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="28"> Chimbau</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="29"> Trompa</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="30"> Tímpano</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="31"> Teclado</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="32"> Guitarra Havaiana</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="33"> Mandolin</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="34"> Orgão</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="35"> Piano</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="36"> Guitarra Portuguesa</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="37"> Flauta Doce</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="38"> Saxofone</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="39"> Violão de 7 cordas</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="40"> Chocalho</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="41"> Cítara</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="42"> Sousafone</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="43"> Tabla</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="44"> Tambor Falante</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="45"> Pandeiro</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="46"> Violão Tenor</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="47"> Tambor</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="48"> Triângulo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="49"> Trombone</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="50"> Trompete</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="51"> Tuba</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="52"> Vibrafone</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="53"> Viola</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="54"> Violino</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="55"> Vocal</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="56"> Xilofone</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="myInst[]" value="57"> Zabumba</label></a></li></ul></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Estilos que Gosto</label>
+          <div class="input-group">
+            <div class="col-sm-10">
+              <select class="form-control multiselect" id="goodSty" name="goodSty[]" multiple="multiple" style="display: none;">
+
+                <option value="1">Áxe</option>
+
+                <option value="2">Black Music</option>
+
+                <option value="3">Blues</option>
+
+                <option value="4">Bossa Nova</option>
+
+                <option value="5">Chillout</option>
+
+                <option value="6">Clássico</option>
+
+                <option value="7">Country</option>
+
+                <option value="8">Dance</option>
+
+                <option value="9">Disco</option>
+
+                <option value="10">Electronica</option>
+
+                <option value="11">Emocore</option>
+
+                <option value="12">Fado</option>
+
+                <option value="13">Folk</option>
+
+                <option value="14">Forró</option>
+
+                <option value="15">Funk</option>
+
+                <option value="16">Gospel</option>
+
+                <option value="17">Gótico</option>
+
+                <option value="18">Grunge</option>
+
+                <option value="19">Hard Rock</option>
+
+                <option value="20">Hardcore</option>
+
+                <option value="21">Heavy Metal</option>
+
+                <option value="22">Hip Hop</option>
+
+                <option value="23">House</option>
+
+                <option value="24">Indie</option>
+
+                <option value="25">Industrial</option>
+
+                <option value="26">Infatil</option>
+
+                <option value="27">Instrumental</option>
+
+                <option value="28">J-Pop</option>
+
+                <option value="29">J-Rock</option>
+
+                <option value="30">Jazz</option>
+
+                <option value="31">Jovem Guarda</option>
+
+                <option value="32">K-Pop</option>
+
+                <option value="33">K-Rock</option>
+
+                <option value="34">MPB</option>
+
+                <option value="35">New Age</option>
+
+                <option value="36">New Wave</option>
+
+                <option value="37">Pagode</option>
+
+                <option value="38">Piano Rock</option>
+
+                <option value="39">Pop</option>
+
+                <option value="40">Punk</option>
+
+                <option value="41">Pop Rock</option>
+
+                <option value="42">Pós Punk</option>
+
+                <option value="43">Post Rock</option>
+
+                <option value="44">Power Pop</option>
+
+                <option value="45">Progressivo</option>
+
+                <option value="46">Psicodelia</option>
+
+                <option value="47">Punk Rock</option>
+
+                <option value="48">R&amp;B</option>
+
+                <option value="49">Rap</option>
+
+                <option value="50">Reggae</option>
+
+                <option value="51">Regional</option>
+
+                <option value="52">Rock</option>
+
+                <option value="53">Rock Alternativo</option>
+
+                <option value="54">Romântico</option>
+
+                <option value="55">Samba</option>
+
+                <option value="56">Sertanejo</option>
+
+                <option value="57">Ska</option>
+
+                <option value="58">Soft Rock</option>
+
+                <option value="59">Soul</option>
+
+                <option value="60">Surf Music</option>
+
+                <option value="61">Tecnopop</option>
+
+                <option value="62">Trace</option>
+
+                <option value="63">Trip Hop</option>
+
+                <option value="64">Velha Guarda</option>
+
+                <option value="65">World Music</option>
+
+              </select><div class="btn-group" style="width: 300px;"><button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Selecione uma opição" style="width: 300px; overflow: hidden; text-overflow: ellipsis;"><span class="multiselect-selected-text">Selecione uma opição</span> <b class="caret"></b></button><ul class="multiselect-container dropdown-menu" style="max-height: 200px; overflow-y: auto; overflow-x: hidden;"><li class="multiselect-item filter" value="0"><div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Pesquise um estilo"><span class="input-group-btn"><button class="btn btn-default multiselect-clear-filter" type="button"><i class="glyphicon glyphicon-remove-circle"></i></button></span></div></li><li class="multiselect-item multiselect-all"><a tabindex="0" class="multiselect-all"><label class="checkbox"><input type="checkbox" value="multiselect-all"> Selecionar Todos!</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="1"> Áxe</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="2"> Black Music</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="3"> Blues</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="4"> Bossa Nova</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="5"> Chillout</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="6"> Clássico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="7"> Country</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="8"> Dance</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="9"> Disco</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="10"> Electronica</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="11"> Emocore</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="12"> Fado</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="13"> Folk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="14"> Forró</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="15"> Funk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="16"> Gospel</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="17"> Gótico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="18"> Grunge</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="19"> Hard Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="20"> Hardcore</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="21"> Heavy Metal</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="22"> Hip Hop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="23"> House</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="24"> Indie</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="25"> Industrial</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="26"> Infatil</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="27"> Instrumental</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="28"> J-Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="29"> J-Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="30"> Jazz</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="31"> Jovem Guarda</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="32"> K-Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="33"> K-Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="34"> MPB</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="35"> New Age</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="36"> New Wave</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="37"> Pagode</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="38"> Piano Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="39"> Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="40"> Punk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="41"> Pop Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="42"> Pós Punk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="43"> Post Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="44"> Power Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="45"> Progressivo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="46"> Psicodelia</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="47"> Punk Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="48"> R&amp;B</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="49"> Rap</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="50"> Reggae</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="51"> Regional</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="52"> Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="53"> Rock Alternativo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="54"> Romântico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="55"> Samba</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="56"> Sertanejo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="57"> Ska</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="58"> Soft Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="59"> Soul</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="60"> Surf Music</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="61"> Tecnopop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="62"> Trace</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="63"> Trip Hop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="64"> Velha Guarda</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="65"> World Music</label></a></li></ul></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Estilos que não Gosto</label>
+          <div class="input-group">
+            <div class="col-sm-10">
+              <select class="form-control multiselect" id="goodSty" name="goodSty[]" multiple="multiple" style="display: none;">
+
+                <option value="1">Áxe</option>
+
+                <option value="2">Black Music</option>
+
+                <option value="3">Blues</option>
+
+                <option value="4">Bossa Nova</option>
+
+                <option value="5">Chillout</option>
+
+                <option value="6">Clássico</option>
+
+                <option value="7">Country</option>
+
+                <option value="8">Dance</option>
+
+                <option value="9">Disco</option>
+
+                <option value="10">Electronica</option>
+
+                <option value="11">Emocore</option>
+
+                <option value="12">Fado</option>
+
+                <option value="13">Folk</option>
+
+                <option value="14">Forró</option>
+
+                <option value="15">Funk</option>
+
+                <option value="16">Gospel</option>
+
+                <option value="17">Gótico</option>
+
+                <option value="18">Grunge</option>
+
+                <option value="19">Hard Rock</option>
+
+                <option value="20">Hardcore</option>
+
+                <option value="21">Heavy Metal</option>
+
+                <option value="22">Hip Hop</option>
+
+                <option value="23">House</option>
+
+                <option value="24">Indie</option>
+
+                <option value="25">Industrial</option>
+
+                <option value="26">Infatil</option>
+
+                <option value="27">Instrumental</option>
+
+                <option value="28">J-Pop</option>
+
+                <option value="29">J-Rock</option>
+
+                <option value="30">Jazz</option>
+
+                <option value="31">Jovem Guarda</option>
+
+                <option value="32">K-Pop</option>
+
+                <option value="33">K-Rock</option>
+
+                <option value="34">MPB</option>
+
+                <option value="35">New Age</option>
+
+                <option value="36">New Wave</option>
+
+                <option value="37">Pagode</option>
+
+                <option value="38">Piano Rock</option>
+
+                <option value="39">Pop</option>
+
+                <option value="40">Punk</option>
+
+                <option value="41">Pop Rock</option>
+
+                <option value="42">Pós Punk</option>
+
+                <option value="43">Post Rock</option>
+
+                <option value="44">Power Pop</option>
+
+                <option value="45">Progressivo</option>
+
+                <option value="46">Psicodelia</option>
+
+                <option value="47">Punk Rock</option>
+
+                <option value="48">R&amp;B</option>
+
+                <option value="49">Rap</option>
+
+                <option value="50">Reggae</option>
+
+                <option value="51">Regional</option>
+
+                <option value="52">Rock</option>
+
+                <option value="53">Rock Alternativo</option>
+
+                <option value="54">Romântico</option>
+
+                <option value="55">Samba</option>
+
+                <option value="56">Sertanejo</option>
+
+                <option value="57">Ska</option>
+
+                <option value="58">Soft Rock</option>
+
+                <option value="59">Soul</option>
+
+                <option value="60">Surf Music</option>
+
+                <option value="61">Tecnopop</option>
+
+                <option value="62">Trace</option>
+
+                <option value="63">Trip Hop</option>
+
+                <option value="64">Velha Guarda</option>
+
+                <option value="65">World Music</option>
+
+              </select><div class="btn-group" style="width: 300px;"><button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Selecione uma opição" style="width: 300px; overflow: hidden; text-overflow: ellipsis;"><span class="multiselect-selected-text">Selecione uma opição</span> <b class="caret"></b></button><ul class="multiselect-container dropdown-menu" style="max-height: 200px; overflow-y: auto; overflow-x: hidden;"><li class="multiselect-item filter" value="0"><div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Pesquise um estilo"><span class="input-group-btn"><button class="btn btn-default multiselect-clear-filter" type="button"><i class="glyphicon glyphicon-remove-circle"></i></button></span></div></li><li class="multiselect-item multiselect-all"><a tabindex="0" class="multiselect-all"><label class="checkbox"><input type="checkbox" value="multiselect-all"> Selecionar Todos!</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="1"> Áxe</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="2"> Black Music</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="3"> Blues</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="4"> Bossa Nova</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="5"> Chillout</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="6"> Clássico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="7"> Country</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="8"> Dance</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="9"> Disco</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="10"> Electronica</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="11"> Emocore</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="12"> Fado</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="13"> Folk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="14"> Forró</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="15"> Funk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="16"> Gospel</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="17"> Gótico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="18"> Grunge</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="19"> Hard Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="20"> Hardcore</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="21"> Heavy Metal</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="22"> Hip Hop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="23"> House</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="24"> Indie</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="25"> Industrial</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="26"> Infatil</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="27"> Instrumental</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="28"> J-Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="29"> J-Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="30"> Jazz</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="31"> Jovem Guarda</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="32"> K-Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="33"> K-Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="34"> MPB</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="35"> New Age</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="36"> New Wave</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="37"> Pagode</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="38"> Piano Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="39"> Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="40"> Punk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="41"> Pop Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="42"> Pós Punk</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="43"> Post Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="44"> Power Pop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="45"> Progressivo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="46"> Psicodelia</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="47"> Punk Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="48"> R&amp;B</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="49"> Rap</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="50"> Reggae</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="51"> Regional</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="52"> Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="53"> Rock Alternativo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="54"> Romântico</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="55"> Samba</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="56"> Sertanejo</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="57"> Ska</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="58"> Soft Rock</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="59"> Soul</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="60"> Surf Music</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="61"> Tecnopop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="62"> Trace</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="63"> Trip Hop</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="64"> Velha Guarda</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" name="goodSty[]" value="65"> World Music</label></a></li></ul></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail">Estou a procura de banda?</label>
+          <div class="input-group">
+            <div class="col-sm-10">
+              <div class="radio">
+                <label class="radio-inline">
+                  <input type="radio" name="interesse" value="Formar uma Banda">Sim
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="interesse" value="Tocar Ocasionalmente">Não
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" name="submit" id="submit" class="btn btn-info">Anunciar</button>
+    </form>
+  </div>
 </body>
 </html>

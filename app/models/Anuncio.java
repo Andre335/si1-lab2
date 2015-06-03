@@ -70,9 +70,7 @@ public class Anuncio {
         return estilosNaoGosta;
     }
 
-    public Boolean getProcuraBanda() {
-        return procuraBanda;
-    }
+    public Boolean getProcuraBanda() { return procuraBanda; }
 
     public String getFaceBook() {
         return faceBook;

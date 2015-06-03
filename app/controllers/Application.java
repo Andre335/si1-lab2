@@ -12,4 +12,8 @@ public class Application extends Controller {
     }
 
     public static Result anuncie() { return ok(anuncie.render()); }
+
+    public static Result anunciar() {
+        return Results.TODO;
+    }
 }
