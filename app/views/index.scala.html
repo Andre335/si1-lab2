@@ -20,36 +20,70 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar navbar-default navbar-fixed-top scroll-me">
+                <!-- pass scroll-me class above a tags to starts scrolling -->
+            <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
-                        <span class="sr-only">Toggle navigation</span>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Band Finder</a>
+                    <a class="navbar-brand" href="@routes.Application.index()">
+                        <strong>Band Finder</strong>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#subscribe">Anuncios</a></li>
+                        <li><a href="#subscribe">Anuncie</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
                 </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="@routes.Application.index()">Home</a></li>
-                        <li><a href="#">Anuncie</a></li>
-                        <li><a href="#">Sobre</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Ache músicos facilmente!</h1>
-                <p>Aqui você poderá facilmente criar anúncios para achar colegas músicos para montar uma banda
-                    ou combinar de tocar com eles esporadicamente. Crie já seu anúncio! </p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Criar Anúnico »</a></p>
             </div>
         </div>
+        <div class="container" style="padding-top: 60px">
+
+                <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Band Finder</h1>
+                <p>Uma aplicação web que torna mais fácil a busca por outros colegas músicos.</p>
+                <p>Crie seus anúncios e logo, logo alguém entrará em contato com você.</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Criar Anúncio</a>
+                </p>
+            </div>
+
+        </div>
+        <section id="about">
+            <div class="container marketing" style="text-align: center">
+
+                    <!-- Three columns of text below the carousel -->
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Crie Anúncios</h2>
+                        <p>Crie um anúncio completo, e espere seus colegas músicos responderem, para montar sua banda.</p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Busca por Anúncios Filtrada</h2>
+                        <p>Filtre anúncios pelos estilos musicais ou instrumentos que você gosta ou toca para ir direto aos que lhe interessam.</p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Monte sua banda!</h2>
+                        <p>Monte sua banda rapidamente e divirta-se.</p>
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+
+                    <!-- FOOTER -->
+                <footer>
+                    <p class="pull-right"><a href="#">Back to top</a></p>
+                    <p>© 2015 André Araújo</p>
+                </footer>
+            </div>
+        </section>
     </body>
 </html>
