@@ -6,10 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css">
+        
         <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
         rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Multiselect CSS -->
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.at("stylesheets/bootstrap-multiselect.css")>
+        <!-- Bootstrap Miltiselect JavaScript -->
+        <script type="text/javascript" src=@routes.Assets.at("javascripts/bootstrap-multiselect.js")></script>
+
+        <!-- Bootstrap Miltiselect Action -->
+        <script type="text/javascript" src=@routes.Assets.at("javascripts/bootstrap-multiselect.action.js")></script>
     </head>
     
     <body>
@@ -38,7 +48,7 @@
                             <a href="@routes.Application.index()">Home</a>
                         </li>
                         <li>
-                            <a href="@routes.Application.anuncios()">Anuncios</a>
+                            <a href="#">Anuncios</a>
                         </li>
                     </ul>
                 </div>
@@ -48,79 +58,129 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" method="post" action="@routes.Application.anunciar()">
                             <h1>Dados do Anúncio</h1>
                             <hr>
                             <div class="form-group" id="tfTitulo">
                                 <div class="col-sm-2">
-                                    <label for="inputEmail3" class="control-label">Título</label>
+                                    <label for="inputTitulo" class="control-label">Título</label>
                                 </div>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Título">
+                                    <input name="titulo" type="text" class="form-control" id="inputTitulo"
+                                    placeholder="Título" required="">
                                 </div>
                             </div>
                             <div class="form-group has-feedback" id="taDescricao">
                                 <div class="col-sm-2">
-                                    <label for="inputPassword3" class="control-label">Descrição
+                                    <label for="inputDescricao" class="control-label">Descrição
                                         <br>
                                     </label>
                                 </div>
                                 <div class="col-sm-10">
-                                    <textarea type="text" class="form-control" id="inputPassword3" placeholder="Descrição"></textarea>
+                                    <textarea name="descricao" type="text" class="form-control" id="inputDescricao"
+                                    placeholder="Descrição" required=""></textarea>
                                 </div>
                             </div>
                             <h1>Dados do Usuário</h1>
                             <hr>
                             <div class="form-group" id="tfCidade">
                                 <div class="col-sm-2">
-                                    <label for="inputEmail3" class="control-label">Cidade</label>
+                                    <label for="inputCidade" class="control-label">Cidade</label>
                                 </div>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Cidade">
+                                    <input name="cidade" type="text" class="form-control" id="inputCidade"
+                                    placeholder="Cidade" required="">
                                 </div>
                             </div>
                             <div class="form-group" id="tfBairro">
                                 <div class="col-sm-2">
-                                    <label for="inputEmail3" class="control-label">Bairro</label>
+                                    <label for="inputBairro" class="control-label">Bairro</label>
                                 </div>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Bairro">
+                                    <input name="bairro" type="text" class="form-control" id="inputBairro"
+                                    placeholder="Bairro" required="">
                                 </div>
                             </div>
                             <div class="form-group" id="tfEmail">
                                 <div class="col-sm-2">
-                                    <label for="inputEmail3" class="control-label">Email</label>
+                                    <label for="inputEmail" class="control-label">Email</label>
                                 </div>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    <input name="email" type="email" class="form-control" id="inputEmail"
+                                    placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group" id="tfFacebook">
                                 <div class="col-sm-2">
-                                    <label for="inputEmail3" class="control-label">Facebook
+                                    <label for="inputFacebook" class="control-label">Facebook
                                         <br>
                                     </label>
                                 </div>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Facebook">
+                                    <input name="facebook" type="text" class="form-control" id="inputFacebook"
+                                    placeholder="Facebook">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2">
-                                    <label class="control-label">Instrumentos</label>
+                                    <label class="control-label" for="inputInstrumentos">Instrumentos</label>
                                 </div>
-                                <div class="col-sm-10">
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
+                                <div class="col-sm-10" id="inputInstrumentos">
+                                    <select class="form-control multiselect" id="instrumentos" name="instrumentos[]" multiple="multiple" required>
+                                        <option value="0">Bateria</option>
+                                        <option value="1">Baixo</option>
+                                        <option value="2">Guitarra</option>
+                                        <option value="3">Teclado</option>
+                                        <option value="4">Canto</option>
+                                        <option value="5">Percussão</option>
+                                        <option value="6">Gaita</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input id="checkboxProcuraBanda" type="checkbox">Sim</label>
+                                <div class="col-sm-2">
+                                    <label class="control-label" for="inputGosto">Gosto</label>
+                                </div>
+                                <div class="col-sm-10" id="inputGosto">
+                                    <select class="form-control multiselect" id="gosto" name="gosto[]" multiple="multiple">
+                                        <option value="0">Rock</option>
+                                        <option value="1">Indie</option>
+                                        <option value="2">Axé</option>
+                                        <option value="3">Sertanejo</option>
+                                        <option value="4">Metal</option>
+                                        <option value="5">Swingueira</option>
+                                        <option value="6">Pop</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label class="control-label" for="inputNaoGosto">Não Gosto</label>
+                                </div>
+                                <div class="col-sm-10" id="inputNaoGosto">
+                                    <select class="form-control multiselect" id="naoGosto" name="naoGosto[]" multiple="multiple">
+                                        <option value="0">Rock</option>
+                                        <option value="1">Indie</option>
+                                        <option value="2">Axé</option>
+                                        <option value="3">Sertanejo</option>
+                                        <option value="4">Metal</option>
+                                        <option value="5">Swingueira</option>
+                                        <option value="6">Pop</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label class="control-label">Procura Banda?</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="radio">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="interesse" value="sim">Sim</input>
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="interesse" value="nao">Nao</input>
+                                        </label>
                                     </div>
                                 </div>
                             </div>

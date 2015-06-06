@@ -1,0 +1,19 @@
+New log file opened at Sat Jun 06 17:54:03 BRT 2015 by 14100@Dell
+Taking next connection to: 61642
+New client attempting to connect on port: 61643-61642
+  Address = /10.0.10.105:61642
+This client on port 61643 has uuid 430fa965-fa55-49fe-91d8-4fc80a3545f4 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-430fa965-fa55-49fe-91d8-4fc80a3545f4
+Taking next connection to: 61642
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61642
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61642
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61642
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61642
