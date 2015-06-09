@@ -1,22 +1,61 @@
 package models;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Andre on 01/06/2015.
  */
-public class Anuncio {
+@Entity(name = "anuncio")
+public class Anuncio implements Serializable {
 
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @Column(name = "titulo", nullable = false)
     private String titulo;
+
+    @Column(name = "descricao", nullable = false)
     private String descricao;
+
+    @Column(name = "cidade", nullable = false)
     private String cidade;
+
+    @Column(name = "bairro", nullable = false)
     private String bairro;
+
+    @ManyToMany (cascade = CascadeType.ALL)
+    @JoinTable
     private List<String> instrumentos;
+
+    @ManyToMany (cascade = CascadeType.ALL)
+    @JoinTable
     private List<String> estilosGosta;
+
+    @ManyToMany (cascade = CascadeType.ALL)
+    @JoinTable
     private List<String> estilosNaoGosta;
+
+    @Column(name = "procuraBanda", nullable = false)
     private Boolean procuraBanda;
+
+    @Column(name = "facebook")
     private String faceBook;
+
+    @Column(name = "email")
     private String email;
+
+    @Transient
+    private static final long serialVersionUID = 1L;
+
+    protected Anuncio() {
+        this.instrumentos = new ArrayList<>();
+        this.estilosGosta = new ArrayList<>();
+        this.estilosNaoGosta = new ArrayList<>();
+    }
 
     public Anuncio(String titulo1, String descricao1, String cidade1, String bairro1, List<String> instrumentos1,
                    List<String> estilosLike, List<String> estilosNotLike,
@@ -41,6 +80,10 @@ public class Anuncio {
         this.faceBook = faceBook;
         this.email = email;
     }
+
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id = id; }
 
     public String getTitulo() {
         return titulo;

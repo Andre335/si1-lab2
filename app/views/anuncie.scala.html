@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-    
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -126,15 +124,8 @@
                                     <label class="control-label" for="inputInstrumentos">Instrumentos</label>
                                 </div>
                                 <div class="col-sm-10" id="inputInstrumentos">
-                                    <select class="form-control multiselect" id="instrumentos" name="instrumentos[]" multiple="multiple" required>
-                                        <option value="0">Bateria</option>
-                                        <option value="1">Baixo</option>
-                                        <option value="2">Guitarra</option>
-                                        <option value="3">Teclado</option>
-                                        <option value="4">Canto</option>
-                                        <option value="5">Percussão</option>
-                                        <option value="6">Gaita</option>
-                                    </select>
+                                    <input name="instrumentos" type="text" class="form-control" id="inputInstrumentos"
+                                    placeholder="Instrumentos que você toca (separados por vírgula)" required="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -142,15 +133,8 @@
                                     <label class="control-label" for="inputGosto">Gosto</label>
                                 </div>
                                 <div class="col-sm-10" id="inputGosto">
-                                    <select class="form-control multiselect" id="gosto" name="gosto[]" multiple="multiple">
-                                        <option value="0">Rock</option>
-                                        <option value="1">Indie</option>
-                                        <option value="2">Axé</option>
-                                        <option value="3">Sertanejo</option>
-                                        <option value="4">Metal</option>
-                                        <option value="5">Swingueira</option>
-                                        <option value="6">Pop</option>
-                                    </select>
+                                    <input name="gosto" type="text" class="form-control" id="inputGosto"
+                                    placeholder="Estilos que você gosta (separados por vírgula)">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -158,15 +142,8 @@
                                     <label class="control-label" for="inputNaoGosto">Não Gosto</label>
                                 </div>
                                 <div class="col-sm-10" id="inputNaoGosto">
-                                    <select class="form-control multiselect" id="naoGosto" name="naoGosto[]" multiple="multiple">
-                                        <option value="0">Rock</option>
-                                        <option value="1">Indie</option>
-                                        <option value="2">Axé</option>
-                                        <option value="3">Sertanejo</option>
-                                        <option value="4">Metal</option>
-                                        <option value="5">Swingueira</option>
-                                        <option value="6">Pop</option>
-                                    </select>
+                                    <input name="naoGosto" type="text" class="form-control" id="inputNaoGosto"
+                                    placeholder="Estilos que você não gosta (separados por vírgula)">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -176,14 +153,22 @@
                                 <div class="col-sm-10">
                                     <div class="radio">
                                         <label class="radio-inline">
-                                            <input type="radio" name="interesse" value="sim">Sim</input>
+                                            <input type="radio" name="interesse" value="sim" required="">Sim</input>
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="interesse" value="nao">Nao</input>
+                                            <input type="radio" name="interesse" value="nao" required="">Não</input>
                                         </label>
                                     </div>
                                 </div>
                             </div>
+
+                            @if(flash.get("erro") != null) {
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <b>Erro!</b> @flash.get("erro")
+                                </div>
+                            }
+
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <button type="submit" class="btn btn-info" id="btAnunciar" contenteditable="true">Anunciar
